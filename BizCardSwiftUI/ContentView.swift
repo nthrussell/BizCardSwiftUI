@@ -10,7 +10,34 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello World")
+        HStack {
+            Image("russell")
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                .frame(width: 150, height: 150, alignment: .center)
+            VStack() {
+                Text("M A Russell")
+                    .font(.title)
+                    .foregroundColor(.white)
+                Text("iOS Developer")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                HStack() {
+                    Image(systemName: "t.square.fill")
+                        .foregroundColor(.white)
+                    Text(": @iOSAppOceanize")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .bold()
+                        .italic()
+                } // Mark: - HStack Ends Here
+            } // Mark: - VStack Ends Here
+        }.frame(width: 380, height: 200)
+            .background(Color.orange)
+        .cornerRadius(8)
+        .shadow(radius: 5)
     }
 }
 
